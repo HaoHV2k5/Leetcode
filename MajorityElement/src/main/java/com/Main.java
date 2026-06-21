@@ -45,7 +45,7 @@ public class Main {
         int cur = nums[0];
         for(int i = 1; i< len; i++){
             if(nums[i] == cur){
-                size+=1;    
+                size+=1;
             }
             else{
                 maxSize = Math.max(size, maxSize);
