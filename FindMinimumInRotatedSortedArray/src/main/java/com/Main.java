@@ -3,15 +3,30 @@ package com;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+    // cách 1
+    public int findMin(int[] nums) {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+        int l = 0;
+        int r = nums.length - 1;
+
+        int ans = nums[0];
+        while(l <= r){
+            int mid = l + (r - l )/2;
+
+            if(nums[mid] >= ans){
+                l = mid +1;
+
+            }
+            else{
+                r = mid-1 ;
+                ans = nums[mid];
+            }
         }
+        return ans;
+    }
+
+
+    static void main() {
+
     }
 }
