@@ -48,6 +48,26 @@ public class Main {
 
     }
 
+
+    // c2 toi uu sliding windown hon
+    public int lengthOfLongestSubstring2(String s) {
+        Set<Character> set = new HashSet<>();
+        int l = 0;
+        int ans = 0;
+
+        for(int r = 0; r < s.length(); r ++){
+            char w = s.charAt(r);
+            while(set.contains(w)){
+                set.remove(s.charAt(l));
+                l++;
+            }
+            set.add(w);
+            ans = Math.max(ans, set.size());
+        }
+
+        return ans;
+    }
+
     static void main() {
 
     }
